@@ -16,7 +16,7 @@ void printOnConsole(int MajorColorNumber, int MinorColorNumber)
 {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-    printf("%d | %s | %s\n", MajorColorNumber * 5 + MinorColorNumber, majorColor[MajorColorNumber], minorColor[MajorColorNumber]);
+    printf("%d | %s | %s\n", MajorColorNumber * 5 + MinorColorNumber+1, majorColor[MajorColorNumber], minorColor[MajorColorNumber]);
 }
 
 int main() {

@@ -4,7 +4,7 @@
 int alertFailureCount = 0;
 #define Alert_Threshold 200
 
-float farenheitToCelcius(float farenheit);
+float ConvertFarenheitToCelcius(float farenheit);
 
 int networkAlertStub(float celcius) {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
@@ -12,19 +12,18 @@ int networkAlertStub(float celcius) {
     // Return 500 for not-ok
     // stub always succeeds and returns 200
     if(celcius > Alert_Threshold) {
-        printf("ALERT: Temperature is %.1f celcius.\n", celcius);
         return 500;
     } else {
         return 200;
     }
 }
 
-float farenheitToCelcius(float farenheit) {
+float ConvertFarenheitToCelcius(float farenheit) {
     return ((farenheit-32)*5/9);
 }
     
 void alertInCelcius(float farenheit, int (*Fn_Ptr_NetworkAlert)(float)) {
-    float celcius = farenheitToCelcius(farenheit);
+    float celcius = ConvertFarenheitToCelcius(farenheit);
     int returnCode = Fn_Ptr_NetworkAlert(celcius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
@@ -38,10 +37,12 @@ void alertInCelcius(float farenheit, int (*Fn_Ptr_NetworkAlert)(float)) {
 int main() {
     int (*Fcn_Ptr_networkAlert)(float);
     Fcn_Ptr_networkAlert = &networkAlertStub;
-    alertInCelcius(400.5,Fcn_Ptr_networkAlert);
-    assert(alertFailureCount!=0);
     alertInCelcius(303.6,Fcn_Ptr_networkAlert);
-    assert(alertFailureCount!=0);
+    assert(alertFailureCount==0);
+    alertInCelcius(400.5,Fcn_Ptr_networkAlert);
+    assert(alertFailureCount==1);
+    alertInCelcius(500.4,Fcn_Ptr_networkAlert);
+    assert(alertFailureCount==2);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;

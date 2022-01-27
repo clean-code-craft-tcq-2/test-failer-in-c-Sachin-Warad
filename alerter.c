@@ -40,7 +40,7 @@ int main() {
     Fcn_Ptr_networkAlert = &networkAlertStub;
     alertInCelcius(400.5,Fcn_Ptr_networkAlert);
     assert(alertFailureCount!=0);
-    alertInCelcius(303.6);
+    alertInCelcius(303.6,Fcn_Ptr_networkAlert);
     assert(alertFailureCount!=0);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");

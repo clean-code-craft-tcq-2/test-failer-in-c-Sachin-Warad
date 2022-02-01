@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "misaligned.h"
 
 struct ColorCode
 {
@@ -6,3 +6,5 @@ struct ColorCode
     char MajorColor[15];
     char MinorColor[15];
 };
+
+void testColorManual(int MajorColorNumber, int MinorColorNumber);

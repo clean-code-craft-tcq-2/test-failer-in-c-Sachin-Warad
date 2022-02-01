@@ -1,5 +1,4 @@
 #include "misaligned.h"
-#include "misaligned_stub.h"
 
 int ManualIndex = 1;
 

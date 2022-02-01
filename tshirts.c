@@ -14,7 +14,7 @@ char size(int cms) {
 }
 
 void testTshirtsSize(int sizeInCms, char sizeInChar){
-    assert(size(sizeInCms)===sizeInChar);
+    assert(size(sizeInCms) == sizeInChar);
 }
 
 int main() {

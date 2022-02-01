@@ -12,5 +12,6 @@ struct ColorCode
     char MinorColor[15];
 };
 
+void printColorMap(void (*Fn_Ptr_ReferenceManual)(int,int));
 void testColorManual(int MajorColorNumber, int MinorColorNumber);
 void printOnConsole(int MajorColorNumber, int MinorColorNumber);

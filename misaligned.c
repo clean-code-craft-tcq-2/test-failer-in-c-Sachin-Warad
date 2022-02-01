@@ -13,9 +13,9 @@ int printColorMap(void (*Fn_Ptr_ReferenceManual)(int,int)) {
 }
 
 void testColorManual(int MajorColorNumber, int MinorColorNumber) {
-      Manual[index].pairNumber = (i*5)+j+1;
-      strcpy(Manual[index].MajorColor, majorColor[i]);
-      strcpy(Manual[index].MinorColor, minorColor[j]);
+      Manual[index].pairNumber = (MajorColorNumber*5)+MinorColorNumber+1;
+      strcpy(Manual[index].MajorColor, majorColor[MajorColorNumber]);
+      strcpy(Manual[index].MinorColor, minorColor[MinorColorNumber]);
       index++;
 }
 

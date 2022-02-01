@@ -1,8 +1,5 @@
 #include "misaligned.h"
 
-const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
-const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-
 int printColorMap(void (*Fn_Ptr_ReferenceManual)(int,int)) {
     int i = 0, j = 0;
     for(i = 0; i < 5; i++) {

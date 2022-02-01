@@ -1,4 +1,6 @@
 #include "misaligned.h"
+#include <assert.h>
+#include <string.h>
 
 struct ColorCode
 {

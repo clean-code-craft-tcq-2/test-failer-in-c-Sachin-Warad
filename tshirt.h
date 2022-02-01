@@ -1,4 +1,4 @@
-char size(int cms);
+char size(int sizeInCms);
 void testTshirtsSize(int sizeInCms, char sizeInChar);
 
 #define S_UpperLimit 38

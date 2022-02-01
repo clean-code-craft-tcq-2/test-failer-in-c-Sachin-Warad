@@ -1,6 +1,6 @@
 #include "misaligned.h"
 
-int ManualIndex = 1;
+//int ManualIndex = 1;
 
 int printColorMap(void (*Fn_Ptr_ReferenceManual)(int,int)) {
     int i = 0, j = 0;
@@ -12,12 +12,14 @@ int printColorMap(void (*Fn_Ptr_ReferenceManual)(int,int)) {
     return i * j;
 }
 
+/*
 void testColorManual(int MajorColorNumber, int MinorColorNumber) {
       Manual[ManualIndex].pairNumber = (MajorColorNumber*5)+MinorColorNumber+1;
       strcpy(Manual[ManualIndex].MajorColor, majorColor[MajorColorNumber]);
       strcpy(Manual[ManualIndex].MinorColor, minorColor[MinorColorNumber]);
       ManualIndex++;
 }
+*/
 
 void printOnConsole(int MajorColorNumber, int MinorColorNumber)
 {

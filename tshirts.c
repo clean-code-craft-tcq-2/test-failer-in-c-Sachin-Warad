@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <assert.h>
+#include "tshirt.h"
 
-char size(int cms) {
+char size(int sizeInCms) {
     char sizeName = '\0';
-    if(cms <= 38) {
+    if(sizeInCms <= S_UpperLimit) {
         sizeName = 'S';
-    } else if(cms > 38 && cms <= 42) {
+    } else if(sizeInCms > M_LowerLimit && sizeInCms <= M_UpperLimit) {
         sizeName = 'M';
-    } else if(cms > 42) {
+    } else if(sizeInCms > L_LowerLimit) {
         sizeName = 'L';
     }
     return sizeName;

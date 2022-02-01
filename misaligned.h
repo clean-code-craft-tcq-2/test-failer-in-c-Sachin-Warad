@@ -14,5 +14,5 @@ struct ColorCode
 ColorCode Manual[26];
 
 int printColorMap(void (*Fn_Ptr_ReferenceManual)(int,int));
-//void testColorManual(int MajorColorNumber, int MinorColorNumber);
+void testColorManual(int MajorColorNumber, int MinorColorNumber);
 void printOnConsole(int MajorColorNumber, int MinorColorNumber);

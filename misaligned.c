@@ -16,7 +16,7 @@ void printOnConsole(int MajorColorNumber, int MinorColorNumber)
 
 int main() {
     void (*Fn_Ptr_ReferenceManual)(int,int);
-    Fn_Ptr_ReferenceManual = &testColorManual;
+    Fn_Ptr_ReferenceManual = &printOnConsole;
     int result = printColorMap(Fn_Ptr_ReferenceManual);
     assert(result == 25);
     assert(Manual[2].pairNumber == 2);

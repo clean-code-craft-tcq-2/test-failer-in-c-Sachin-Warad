@@ -32,19 +32,17 @@ void alertInCelcius(float farenheit, int (*Fn_Ptr_NetworkAlert)(float)) {
     }
 }
 
-void testTempAlerter(int expectedFailCount) {
+void testTempAlerter(float farenheit, int expectedFailCount) {
+    int (*Fcn_Ptr_networkAlert)(float);
+    Fcn_Ptr_networkAlert = &networkAlertStub;
+    alertInCelcius(farenheit,Fcn_Ptr_networkAlert);
     assert(alertFailureCount == expectedFailCount);
 }
 
 int main() {
-    int (*Fcn_Ptr_networkAlert)(float);
-    Fcn_Ptr_networkAlert = &networkAlertStub;
-    alertInCelcius(303.6,Fcn_Ptr_networkAlert);
-    testTempAlerter(0);
-    alertInCelcius(400.5,Fcn_Ptr_networkAlert);
-    testTempAlerter(1);
-    alertInCelcius(500.4,Fcn_Ptr_networkAlert);
-    testTempAlerter(2);
+    testTempAlerter(303.6,0);
+    testTempAlerter(400.5,1);
+    testTempAlerter(500.4,2);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
